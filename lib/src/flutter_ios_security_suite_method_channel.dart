@@ -4,16 +4,14 @@ import 'package:flutter/services.dart';
 import 'flutter_ios_security_suite_platform_interface.dart';
 
 /// An implementation of [FlutterIosSecuritySuitePlatform] that uses method channels.
-class MethodChannelFlutterIosSecuritySuite
-    extends FlutterIosSecuritySuitePlatform {
+class MethodChannelFlutterIosSecuritySuite extends FlutterIosSecuritySuitePlatform {
   /// The method channel used to interact with the native platform.
   @visibleForTesting
   final methodChannel = const MethodChannel('flutter_ios_security_suite');
 
   @override
   Future<bool?> amIJailbroken() async {
-    final isJailbroken =
-        await methodChannel.invokeMethod<bool>('amIJailbroken');
+    final isJailbroken = await methodChannel.invokeMethod<bool>('amIJailbroken');
     return isJailbroken;
   }
 
@@ -25,8 +23,13 @@ class MethodChannelFlutterIosSecuritySuite
 
   @override
   Future<bool?> amIReverseEngineered() async {
-    final isReverseEngineered =
-        await methodChannel.invokeMethod<bool>('amIReverseEngineered');
+    final isReverseEngineered = await methodChannel.invokeMethod<bool>('amIReverseEngineered');
     return isReverseEngineered;
+  }
+
+  @override
+  Future<bool?> amITampered(params) async {
+    final tampered = await methodChannel.invokeMethod<dynamic>('amITampered', params);
+    return tampered;
   }
 }

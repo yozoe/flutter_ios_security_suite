@@ -7,4 +7,22 @@
    <FileRef
       location = "group:Pods/Pods.xcodeproj">
    </FileRef>
+   <Group
+      location = "absolute:/Users/dong/Code/flutter_ios_security_suite/ios"
+      name = "ios">
+      <Group
+         location = "group:Classes"
+         name = "Classes">
+         <FileRef
+            location = "group:FlutterIosSecuritySuitePlugin.swift">
+         </FileRef>
+      </Group>
+      <FileRef
+         location = "group:flutter_ios_security_suite.podspec">
+      </FileRef>
+      <Group
+         location = "group:Assets"
+         name = "Assets">
+      </Group>
+   </Group>
 </Workspace>

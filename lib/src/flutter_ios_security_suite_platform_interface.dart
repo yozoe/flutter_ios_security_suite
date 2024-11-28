@@ -36,4 +36,9 @@ abstract class FlutterIosSecuritySuitePlatform extends PlatformInterface {
     throw UnimplementedError(
         'amIReverseEngineered() has not been implemented.');
   }
+
+  Future<bool?> amITampered(dynamic params) {
+    throw UnimplementedError(
+        'amITampered() has not been implemented.');
+  }
 }

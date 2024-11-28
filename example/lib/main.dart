@@ -36,6 +36,10 @@ class _MyAppState extends State<MyApp> {
     bool? amIReverseEngineered =
         await _flutterIosSecuritySuitePlugin.amIReverseEngineered();
 
+    dynamic tampered = await _flutterIosSecuritySuitePlugin.amITampered({"a":"aa", "b": "bb"});
+
+    print('tampered $tampered');
+
     setState(() {
       // if null then set error or not or is respective value
       this.amIJailbroken = amIJailbroken == null

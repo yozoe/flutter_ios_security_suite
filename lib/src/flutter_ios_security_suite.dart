@@ -15,4 +15,8 @@ class FlutterIosSecuritySuite {
   Future<bool?> amIReverseEngineered() {
     return FlutterIosSecuritySuitePlatform.instance.amIReverseEngineered();
   }
+
+  Future<dynamic> amITampered(dynamic params) {
+    return FlutterIosSecuritySuitePlatform.instance.amITampered(params);
+  }
 }
